@@ -37,13 +37,3 @@ class GameOfLife:
 if __name__ == '__main__':
     obj = GameOfLife()
     obj.animate()
-    
-
-
-
-
-
-
-
-
-
