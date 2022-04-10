@@ -9,7 +9,7 @@ plt.style.use('dark_background')
 class GameOfLife:
     def __init__(self, seed = None, size = 100):
         self.size = size
-        self.I = seed if seed else np.round(np.random.random((self.size, self.size)))
+        self.I = seed if seed is not None else np.round(np.random.random((self.size, self.size)))
         self.kernel = np.array([
                 [1, 1, 1],
                 [1, 0, 1],
@@ -35,5 +35,11 @@ class GameOfLife:
         plt.show()
 
 if __name__ == '__main__':
-    obj = GameOfLife()
+    seed = np.array([
+        [1, 1, 1],
+        [1, 0, 0],
+        [0, 1, 0]
+    ])
+    seed = np.pad(seed, ((50, 50), (50, 50)))
+    obj = GameOfLife(seed=seed)
     obj.animate()

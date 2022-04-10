@@ -24,3 +24,6 @@ Combining the above logic, the state update is a two-liner:
 t = convolve(self.I, self.kernel, mode='same') + 17 * self.I - 9 # compute state variables
 self.I = np.where((t == -6)|(t == 10)|(t == 11), 1, 0).reshape(self.I.shape)  # new state I
 ```
+
+## List of patterns
+Great library of game of life patterns: [Link](https://copy.sh/life/examples/).
